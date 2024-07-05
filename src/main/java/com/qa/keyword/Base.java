@@ -15,6 +15,7 @@ public class Base {
 	public void setUp() throws InvalidBrowserNameException {
 		keyword.openBrowser(config.getBrowserName());
 		keyword.launchUrl(config.getUrl());
+		keyword.maximizeBrowser();
 	}
 	
 	@AfterMethod
