@@ -23,6 +23,9 @@ public class Keyword {
 		}
 
 	}
+	public void maximizeBrowser() {
+		driver.manage().window().maximize();
+	}
 
 	public void launchUrl(String url) {
 		driver.get(url);
