@@ -1,11 +1,7 @@
 package com.qa.loginpagetc;
-
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.qa.keyword.Base;
-import com.qa.keyword.Keyword;
 import com.qa.pageobjects.LoginPage;
 import com.qa.utilites.Config;
 import com.qa.utilites.ExcelUtilSmita;
@@ -23,7 +19,7 @@ public class Login_Page_Tc extends Base {
 	 */
 	public void vrerifyLogin(String id, String pass) {
 		String expected = "Logged In Successfully";
-		LoginPage loginPage = new LoginPage();
+		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserName(id);
 		loginPage.enterpassword(pass);
 		loginPage.clickSubmit();
