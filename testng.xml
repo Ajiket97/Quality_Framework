@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="com.qa.keyword.Base"/>
-      <class name="com.qa.loginpagetc.LoginTDD"/>
-      <class name="com.qa.loginpagetc.Login_Page_Tc"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+
+
+<suite name="CrossBrowserSuite" parallel="tests" thread-count="2">
+    <test name="Test on Firefox">
+        <parameter name="browserName" value="Firefox" />
+        <classes>
+            <class name="com.qa.loginpagetc.Login_Page_Tc"/>
+        </classes>
+    </test>
+    <test name="Test on Chrome">
+        <parameter name="browserName" value="Chrome" />
+        <classes>
+            <class name="com.qa.loginpagetc.Login_Page_Tc"/>
+        </classes>
+    </test>
+</suite>
+

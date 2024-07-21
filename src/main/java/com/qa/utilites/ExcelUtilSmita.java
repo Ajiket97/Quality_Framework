@@ -24,7 +24,7 @@ public class ExcelUtilSmita {
 	
 	@DataProvider(name="LoginData")
 	public  Object[][] getLoginData() throws IOException {
-		String filepath=System.getProperty("user.dir")+"/src/main/resources/data.xlsx";
+		String filepath=System.getProperty("user.dir")+"/src/main/resources/LoginData.xlsx";
 		String sheetName="Sheet1";
 		//return ExcelUtilSmita.readExcelSheet(filepath, sheetName);
 		return ExcelUtilSmita.getExcelData(filepath, sheetName);

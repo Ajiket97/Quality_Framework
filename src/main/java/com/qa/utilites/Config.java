@@ -14,6 +14,10 @@ public class Config {
 	}
 	
 	public String getBrowserName() {
+		String browserName = System.getProperty("browserName");
+        if (browserName != null) {
+            return browserName;
+        }
 		return readProperty("browserName");
 
 	}

@@ -1,28 +1,15 @@
 package com.qa.keyword;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
-import com.qa.exception.InvalidBrowserNameException;
-
 
 public class Keyword {
-	public static RemoteWebDriver driver;
+	private WebDriver driver;
 
-	public void openBrowser(String browserName) throws InvalidBrowserNameException {
-		if (browserName.equalsIgnoreCase("Firefox")) {
-			driver = new FirefoxDriver();
-
-		} else if (browserName.equalsIgnoreCase("Chrome")) {
-			driver = new ChromeDriver();
-		}else {
-			throw new InvalidBrowserNameException(browserName);
-		}
-
+	public Keyword(WebDriver driver) {
+		this.driver = driver;
 	}
+
 	public void maximizeBrowser() {
 		driver.manage().window().maximize();
 	}
@@ -43,9 +30,11 @@ public class Keyword {
 	public String getText(WebElement e) {
 		return e.getText();
 	}
+
 	public void closeBrowser() {
 		driver.close();
 	}
+
 	public void quitBrowser() {
 		driver.quit();
 	}
