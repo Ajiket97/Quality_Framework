@@ -14,8 +14,8 @@ public class LoginTDD extends Base {
 	Config conf = new Config();
 
 	@Test
-	public static void loginTDD() throws IOException, InterruptedException {
-		LoginPage loginPage = new LoginPage();
+	public void loginTDD() throws IOException, InterruptedException {
+		LoginPage loginPage = new LoginPage(driver);
 		String filePath = System.getProperty("user.dir") + "/src/main/resources/data.xlsx";
 		int rows = ExcelUtil.getRowCount(filePath, "Sheet1");
 		System.out.println(rows);

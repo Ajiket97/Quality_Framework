@@ -1,5 +1,6 @@
 package com.qa.pageobjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,9 +23,12 @@ public class LoginPage {
 	@FindBy(xpath = "//h1[text()='Logged In Successfully']")
 	public WebElement msg;
 	
-	public LoginPage() {
-		PageFactory.initElements(Keyword.driver, this);
-	}
+	private WebDriver driver;
+
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
 	public void enterUserName(String text) {
 		userName.sendKeys(text);
